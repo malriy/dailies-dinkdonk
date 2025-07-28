@@ -1,6 +1,9 @@
 # Ignore config file with sensitive data
 config.py
 
+#Ignore .bat
+*run_bat.bat
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
