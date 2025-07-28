@@ -42,10 +42,6 @@ DailiesBot/
 
 2. **Install dependencies**
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
    If you're doing image recognition:
 
    ```bash
@@ -55,7 +51,7 @@ DailiesBot/
 3. **Create your config file**
 
    - Copy `config_template.py` → `config.py`
-   - Fill in your `TOKEN`, local *(absolute)* paths to executables, user ID, and image filenames.
+   - Fill in bot `TOKEN`, local *(absolute)* paths to executables, user ID, and image filenames.
 
 4. **Prepare image templates**
 
