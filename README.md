@@ -127,25 +127,4 @@ My own thing: the bot will **watch Discord presence**. When you start playing a 
 
 ---
 
-## 🚀 Further Extensions
-
-- Migrate to **discord.py slash commands** or cogs
-- Add a **logging file** for game launches or errors
-
----
-
-## 📄 License
-
-Specify your license here, e.g.:
-
-```
-MIT License
-```
-
----
-
-## ❤️ Contributing
-
-Feel free to open issues or raise pull requests.\
-If you share this project or use it locally, just keep your `config.py` private and safe.
 
