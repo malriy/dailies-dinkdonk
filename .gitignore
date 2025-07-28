@@ -2,7 +2,7 @@
 config.py
 
 #Ignore .bat and .vbs files
-run_bot.bat
+*run_bot.bat
 launch_bot.vbs
 
 # Byte-compiled / optimized / DLL files
