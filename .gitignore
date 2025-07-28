@@ -1,8 +1,9 @@
 # Ignore config file with sensitive data
 config.py
 
-#Ignore .bat
+#Ignore .bat and .vbs files
 *run_bat.bat
+launch_bot.vbs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
