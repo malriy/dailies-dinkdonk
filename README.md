@@ -97,11 +97,9 @@ Set WshShell = Nothing
 | `!genshin` | Launches Genshin and clicks stop image until UI shown   |
 | `hello`    | Test command; bot replies “Hello! :D”                  |
 
-**Make sure the bot is in a server and you send commands in the designated channel.**
-
 ---
 
-## 🧹 Advanced Behavior
+## 🧹 Other Behavior
 
 My own thing: the bot will **watch Discord presence**. When you start playing League of Legends, it launches my third-party tool (`cslol-manager` LoL mods), unless it's already running.
 
