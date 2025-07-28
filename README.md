@@ -7,7 +7,6 @@ Simple mini project to automate launching and interacting with games using Disco
 ## ⚙️ Features
 
 - Launch games via Discord commands (`!hsr`, `!genshin`)
-- Automatically click the login screen until success or stop condition
 - Detect when games are running to avoid duplicate launches
 - Does image-based screen detection using `.png` templates
 - Tracks your Discord presence to trigger actions based on your activity
@@ -67,11 +66,7 @@ DailiesBot/
 
 ## ▶️ Starting the Bot
 
-### Option A – Using `start.bat` (Windows)
-
-Double-click `start.bat` to run the bot with the right working directory and Python executable.
-
-### Option B – Manual launch via terminal
+### Manual launch via .bat file
 
 ```bash
 @echo off
@@ -86,6 +81,12 @@ pause
 Logged in as YourBotName#1234
 ```
 
+### To make life easier, make a .vbs script to launch the .bat file with no CMD window and put in task scheduler
+```
+Set WshShell = CreateObject("WScript.Shell") 
+WshShell.Run chr(34) & "Path:\to\batFile\start.bat" & Chr(34), 0
+Set WshShell = Nothing
+```
 ---
 
 ## 💬 Usage (Discord Commands)
@@ -102,7 +103,7 @@ Logged in as YourBotName#1234
 
 ## 🧹 Advanced Behavior
 
-My own thing: the bot will **watch Discord presence**. When you start playing a game (like League of Legends), it can launch your third-party tool (e.g. `cslol-manager`), unless it's already running.
+My own thing: the bot will **watch Discord presence**. When you start playing League of Legends, it launches my third-party tool (`cslol-manager` LoL mods), unless it's already running.
 
 ---
 
