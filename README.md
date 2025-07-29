@@ -41,13 +41,11 @@ DailiesBot/
 
 2. **Install dependencies**
 
-   If you're doing image recognition:
-
    ```bash
    pip install pyautogui opencv-python psutil Pillow
    ```
 
-3. **Create your config file**
+3. **Create config file**
 
    - Copy `config_template.py` → `config.py`
    - Fill in bot `TOKEN`, local *(absolute)* paths to executables, user ID, and image filenames.
