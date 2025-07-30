@@ -3,7 +3,7 @@ import subprocess
 import traceback
 import asyncio
 import events.presence_handler
-from config import HSR_PATH, GENSHIN_PATH, IMAGE_PATHS
+from config import EXE_PATHS, IMAGE_PATHS
 
 # Function to handle messages from user
 async def handle_message(message):
@@ -15,11 +15,15 @@ async def handle_message(message):
 
     if message.content.startswith('!hsr'):
         await message.channel.send("Starting Star Rail...")
-        await click_until_stop(HSR_PATH, "StarRail.exe", IMAGE_PATHS["hsr"])    
+        await click_until_stop(EXE_PATHS["hsr"], "StarRail.exe", IMAGE_PATHS["hsr"])    
 
     if message.content.startswith('!genshin'):
         await message.channel.send("Starting Genshin...")
-        await click_until_stop(GENSHIN_PATH, "GenshinImpact.exe", IMAGE_PATHS["genshin"])
+        await click_until_stop(EXE_PATHS["genshin"], "GenshinImpact.exe", IMAGE_PATHS["genshin"])
+
+    if message.content.startswith('!browser'):
+        await message.channel.send("Starting Opera...")
+        subprocess.Popen([EXE_PATHS["opera"]])
 
 # Function to click on HSR/Genshin until it fully logs in
 async def click_until_stop(path, game,stopimg):

@@ -8,9 +8,10 @@ TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace with your actual bot token
 # ------------------------------
 # Game Executable Paths
 # ------------------------------
-CSLOL_PATH = r"PATH\TO\cslol-manager.exe"
-GENSHIN_PATH = r"PATH\TO\GenshinImpact.exe"
-HSR_PATH = r"PATH\TO\StarRail.exe"
+EXE_PATHS = {
+    "appName": r"PATH:\To\App",
+    "appName": r"PATH:\To\AnotherApp"
+}
 
 # ------------------------------
 # Discord User ID to Track (Optional)
