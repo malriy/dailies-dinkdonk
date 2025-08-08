@@ -26,7 +26,7 @@ async def handle_message(message):
         subprocess.Popen([EXE_PATHS["opera"]])
 
 # Function to click on HSR/Genshin until it fully logs in
-async def click_until_stop(path, game,stopimg):
+async def click_until_stop(path, game, stopimg):
     try:
         pyautogui.hotkey('win', 'd')
         subprocess.Popen([path])
@@ -52,3 +52,17 @@ async def click_until_stop(path, game,stopimg):
     except Exception as e:
         print(f"Error launching game: {e}")
         traceback.print_exc()
+
+async def hsr_asg_claim():
+    pyautogui.press('esc')
+    await asyncio.sleep(8)
+
+    Find(IMAGE_PATHS["hsrAsg"])
+
+
+def Find(name):
+    while True:
+        location = pyautogui.locateOnScreen(name, confidence=0.7)
+        if location:
+            pyautogui.moveTo(pyautogui.center(location), duration=2.0)
+            pyautogui.click(pyautogui.center(location))
