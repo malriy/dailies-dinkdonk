@@ -15,7 +15,8 @@ async def handle_message(message):
 
     if message.content.startswith('!hsr'):
         await message.channel.send("Starting Star Rail...")
-        await click_until_stop(EXE_PATHS["hsr"], "StarRail.exe", IMAGE_PATHS["hsr"])    
+        await click_until_stop(EXE_PATHS["hsr"], "StarRail.exe", IMAGE_PATHS["hsr"])
+        await hsr_asg_claim()
 
     if message.content.startswith('!genshin'):
         await message.channel.send("Starting Genshin...")
@@ -57,12 +58,30 @@ async def hsr_asg_claim():
     pyautogui.press('esc')
     await asyncio.sleep(8)
 
-    Find(IMAGE_PATHS["hsrAsg"])
+    assignments = False
+
+    while assignments == False:
+        await asyncio.sleep(30)
+        pyautogui.press('esc')
+
+        await asyncio.sleep(8)
+        assignments = Find_and_Click(IMAGE_PATHS["hsrAsg"])
+
+        if assignments:
+            break
+
+    Find_and_Click(IMAGE_PATHS["hsrClaim"])
+    await asyncio.sleep(8)
+    Find_and_Click(IMAGE_PATHS["hsrAsgAgain"])
 
 
-def Find(name):
-    while True:
-        location = pyautogui.locateOnScreen(name, confidence=0.7)
-        if location:
-            pyautogui.moveTo(pyautogui.center(location), duration=2.0)
-            pyautogui.click(pyautogui.center(location))
+
+
+def Find_and_Click(name):
+    location = pyautogui.locateOnScreen(name, confidence=0.7)
+    if location:
+        pyautogui.moveTo(pyautogui.center(location), duration=2.0)
+        pyautogui.click(pyautogui.center(location))
+        return True
+    
+    return False
