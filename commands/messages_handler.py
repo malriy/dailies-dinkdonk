@@ -70,6 +70,7 @@ async def hsr_asg_claim():
         if assignments:
             break
 
+    await asyncio.sleep(8)
     Find_and_Click(IMAGE_PATHS["hsrClaim"])
     await asyncio.sleep(8)
     Find_and_Click(IMAGE_PATHS["hsrAsgAgain"])
