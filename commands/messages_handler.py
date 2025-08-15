@@ -59,21 +59,29 @@ async def hsr_asg_claim():
     await asyncio.sleep(8)
 
     assignments = False
+    count = 0
 
     while assignments == False:
         await asyncio.sleep(30)
         pyautogui.press('esc')
+        count += 1
 
         await asyncio.sleep(8)
         assignments = Find_and_Click(IMAGE_PATHS["hsrAsg"])
 
-        if assignments:
+        if assignments or count == 4:
             break
 
-    await asyncio.sleep(8)
-    Find_and_Click(IMAGE_PATHS["hsrClaim"])
-    await asyncio.sleep(8)
-    Find_and_Click(IMAGE_PATHS["hsrAsgAgain"])
+    count = 0
+
+    if assignments:
+        await asyncio.sleep(8)
+        Find_and_Click(IMAGE_PATHS["hsrClaim"])
+        await asyncio.sleep(8)
+        Find_and_Click(IMAGE_PATHS["hsrAsgAgain"])
+
+    #reset value of assignments
+    assignments = False 
 
 
 
