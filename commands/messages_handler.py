@@ -55,9 +55,6 @@ async def click_until_stop(path, game, stopimg):
         traceback.print_exc()
 
 async def hsr_asg_claim():
-    pyautogui.press('esc')
-    await asyncio.sleep(8)
-
     assignments = False
     count = 0
 
