@@ -26,6 +26,8 @@ async def handle_message(message):
         await message.channel.send("Starting Opera...")
         subprocess.Popen([EXE_PATHS["opera"]])
 
+##############################################################################################
+
 # Function to click on HSR/Genshin until it fully logs in
 async def click_until_stop(path, game, stopimg):
     try:
@@ -54,6 +56,10 @@ async def click_until_stop(path, game, stopimg):
         print(f"Error launching game: {e}")
         traceback.print_exc()
 
+
+###########################################################################################
+
+#Assignments claiming in HSR
 async def hsr_asg_claim():
     assignments = False
     count = 0
@@ -79,9 +85,10 @@ async def hsr_asg_claim():
 
     #reset value of assignments
     assignments = False 
+##############################################################################################
 
 
-
+##############################################################################################
 
 def Find_and_Click(name):
     location = pyautogui.locateOnScreen(name, confidence=0.7)
