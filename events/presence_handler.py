@@ -8,7 +8,8 @@ async def handle_presence_update(before, after):
 
     for activity in after.activities:
         if activity.type.name.lower() == "playing" and "League of Legends" in activity.name:
-            if not is_process_running("cslol-manager"):
+            #Put .exe name directly
+            if not is_process_running("ModLoader"):
                 subprocess.Popen([EXE_PATHS["cslol"]])
             break
 
